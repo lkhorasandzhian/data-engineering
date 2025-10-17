@@ -3,6 +3,15 @@ print('Hello, World!')
 name = input('Write your name: ')
 print(f'Welcome, {name}!')
 
+def sum_fib_iterative(n):
+    """Итеративный подсчёт суммы первых n чисел Фибоначчи."""
+    a, b = 0, 1
+    total = 0
+    for _ in range(n):
+        total += a
+        a, b = b, a + b
+    return total
+
 def sum_fib_recursive(n, a=0, b=1, total=0):
     """Рекурсивный подсчёт суммы первых n чисел Фибоначчи."""
     if n == 0:
