@@ -17,3 +17,8 @@ def sum_fib_recursive(n, a=0, b=1, total=0):
     if n == 0:
         return total
     return sum_fib_recursive(n - 1, b, a + b, total + a)
+
+if __name__ == "__main__":
+    n = int(input("Enter the number of Fibonacci terms to sum: "))
+    print(f"Iterative sum of first {n} Fibonacci numbers: {sum_fib_iterative(n)}")
+    print(f"Recursive sum of first {n} Fibonacci numbers: {sum_fib_recursive(n)}")
