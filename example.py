@@ -1,3 +1,5 @@
+import time
+
 print('Hello, World!')
 
 name = input('Write your name: ')
@@ -23,7 +25,16 @@ if __name__ == "__main__":
         n = int(input("Enter the number of Fibonacci terms to sum: "))
         if n < 0:
             raise ValueError("Number of terms must be non-negative.")
-        print(f"Iterative sum of first {n} Fibonacci numbers: {sum_fib_iterative(n)}")
-        print(f"Recursive sum of first {n} Fibonacci numbers: {sum_fib_recursive(n)}")
+        
+        start = time.time()
+        iterative_result = sum_fib_iterative(n)
+        iter_time = time.time() - start
+
+        start = time.time()
+        recursive_result = sum_fib_recursive(n)
+        rec_time = time.time() - start
+
+        print(f"\nIterative sum: {iterative_result} (time: {iter_time:.6f}s)")
+        print(f"Recursive sum: {recursive_result} (time: {rec_time:.6f}s)")
     except ValueError as e:
         print(f"Invalid input: {e}")
