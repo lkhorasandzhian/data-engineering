@@ -38,5 +38,3 @@ if __name__ == "__main__":
         print(f"Recursive sum: {recursive_result} (time: {rec_time} ns)")
     except ValueError as e:
         print(f"Invalid input: {e}")
-
-# This line does nothing, just a useless commit.
