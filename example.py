@@ -20,6 +20,15 @@ def sum_fib_recursive(n, a=0, b=1, total=0):
         return total
     return sum_fib_recursive(n - 1, b, a + b, total + a)
 
+##Tribonacci sequence [1, 1 ,1, 3, 5, 9, 17, 31, ...]
+#we started with [0, 0, 1] as a signature or [1, 2, 3] or something same 
+#and take n elements
+def sum_tribonacci(signature, n):
+    res = signature[:n]
+    for i in range(n - 3): res.append(sum(res[-3:]))
+    return res
+            
+
 if __name__ == "__main__":
     try:
         n = int(input("Enter the number of Fibonacci terms to sum: "))
