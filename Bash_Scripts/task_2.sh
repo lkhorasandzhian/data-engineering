@@ -1,3 +1,5 @@
+#!/bin/bash
+
 read -p "Попытка найти путь файла: " filepath
 
 if [ -f "$filepath" ]; then
